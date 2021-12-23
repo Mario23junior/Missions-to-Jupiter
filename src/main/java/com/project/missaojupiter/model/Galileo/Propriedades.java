@@ -1,4 +1,4 @@
-package com.project.missaojupiter.model.ModelGalileo;
+package com.project.missaojupiter.model.Galileo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
