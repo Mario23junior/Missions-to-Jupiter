@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Galileo")
- public class ModelGalileo {
+ public class Galileo {
    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ import javax.persistence.Table;
 	private String indentificacao;
 	private String duracaoDaMiscao;
 	
-	public ModelGalileo() {
+	public Galileo() {
  	}
 
 	public String getNome() {
