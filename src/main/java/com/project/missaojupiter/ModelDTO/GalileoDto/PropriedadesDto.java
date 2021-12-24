@@ -1,4 +1,4 @@
-package com.project.missaojupiter.Dto.GalileoDto;
+package com.project.missaojupiter.ModelDTO.GalileoDto;
 
 public class PropriedadesDto {
 
