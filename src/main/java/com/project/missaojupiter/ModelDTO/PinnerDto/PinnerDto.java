@@ -4,22 +4,13 @@ import java.util.Date;
 
 public class PinnerDto {
 
-	private Long id;
 	private String nome;
 	private String descricao;
 	private Date dataDeConstrucao;
 	private String objetivo;
 	private boolean tripulada;
 
-	 public PinnerDto() {
- 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public PinnerDto() {
 	}
 
 	public String getNome() {

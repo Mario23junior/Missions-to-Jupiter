@@ -2,7 +2,6 @@ package com.project.missaojupiter.ModelDTO.GalileoDto;
 
 public class PropriedadesDto {
 
-	private Long id;
 	private String fabricante;
 	private Double orbitador;
 	private Double aterrissador;
@@ -10,14 +9,6 @@ public class PropriedadesDto {
 	private String massaDeCargaUtil;
 
 	public PropriedadesDto() {
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getFabricante() {

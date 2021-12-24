@@ -4,19 +4,10 @@ import java.util.Date;
 
 public class MissaoDto {
 
-	private Long id;
 	private Date dataDeLacamento;
 	private String destino;
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Date getDataDeLacamento() {
 		return dataDeLacamento;

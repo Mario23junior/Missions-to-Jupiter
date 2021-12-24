@@ -4,23 +4,13 @@ import java.util.Date;
 
 public class voyagerDto {
 
-	private Long id;
-
 	private String nome;
 	private String destino;
 	private Date dataLancamento;
 	private String tipo;
 	private boolean tripulada;
 
-	 public voyagerDto() {
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public voyagerDto() {
 	}
 
 	public String getNome() {
