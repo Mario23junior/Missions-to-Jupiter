@@ -1,4 +1,4 @@
-package com.project.missaojupiter.Dto.GalileoDto;
+package com.project.missaojupiter.ModelDTO.GalileoDto;
 
 import java.util.Date;
 
