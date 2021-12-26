@@ -26,12 +26,13 @@ public class ServiceGalileo {
 	
 	public ResponseEntity<GalileoDto> save(GalileoDto galielDto) {
 		Galileo savebody = saveRes(mapper.map(galielDto, Galileo.class));
-		return ResponseEntity
+ 		return ResponseEntity
 				.status(HttpStatus.CREATED)
 				.body(mapper.map(savebody, GalileoDto.class));
 	}
 	
 	public Galileo saveRes(Galileo galileo) {
+	DonLetValueBeDuplicated(galileo);
 	   Galileo save = galileoRepository.save(galileo);
 	   return save;
 	}
@@ -46,9 +47,9 @@ public class ServiceGalileo {
 	}
 	
 	public ResponseEntity<GalileoDto> updateIdInfo(Long id,GalileoDto galileoDto) {
+		DonLetValueBeDuplicated(galileoDto);
 		Optional<Galileo> updateData = galileoRepository.findById(id);
-		
-		if(updateData.isPresent()) {
+ 		if(updateData.isPresent()) {
 			Galileo dataGali = updateData.get();
 			dataGali.setNome(galileoDto.getNome());
 			dataGali.setDescricao(galileoDto.getDescricao());
@@ -74,10 +75,20 @@ public class ServiceGalileo {
 	}
 	
 	
-	public void DonLetValueBeDuplicated(Galileo galileo) {
-		Galileo buscaGalie = galileoRepository.findByNome(galileo.getNome());
-		if(buscaGalie != null && buscaGalie.getNome() != galileo.getNome()) {
-			throw new ReturnErrorMessage("a sonda %s já se encontra cadastrado, por favor insira valores validos",galileo.getNome());
+	public void DonLetValueBeDuplicated(Galileo galileo) {	
+ 		Galileo buscaGalie = galileoRepository.findByNome(galileo.getNome());
+		if(buscaGalie != null && buscaGalie.getId() != galileo.getId()) {
+			throw new ReturnErrorMessage("a sonda %s já se encontra cadastrado, "
+					+ "por favor insira valores validos",galileo.getNome());
+		}
+	}
+	
+	public void DonLetValueBeDuplicated(GalileoDto galileoDto) {	
+		Galileo dtoModel = mapper.map(galileoDto, Galileo.class);
+ 		Galileo buscaGalie = galileoRepository.findByNome(dtoModel.getNome());
+		if(buscaGalie != null && buscaGalie.getId() != dtoModel.getId()) {
+			throw new ReturnErrorMessage("a sonda %s já se encontra atualizada, "
+					+ "por favor insira valores validos",dtoModel.getNome());
 		}
 	}
 }
