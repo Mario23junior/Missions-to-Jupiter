@@ -6,22 +6,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Galileo")
- public class Galileo {
-   
+public class Galileo {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
 	private String descricao;
 	private String indentificacao;
 	private String duracaoDaMiscao;
-	
+
 	public Galileo() {
- 	}
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -54,6 +61,5 @@ import javax.persistence.Table;
 	public void setDuracaoDaMiscao(String duracaoDaMiscao) {
 		this.duracaoDaMiscao = duracaoDaMiscao;
 	}
-	
-	
+
 }
