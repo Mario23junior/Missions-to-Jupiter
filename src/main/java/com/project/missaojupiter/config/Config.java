@@ -1,4 +1,4 @@
-package com.project.missaojupiter.Config;
+package com.project.missaojupiter.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
