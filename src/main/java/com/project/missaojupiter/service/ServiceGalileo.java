@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.missaojupiter.ModelDTO.GalileoDto.GalileoDto;
+import com.project.missaojupiter.exceptions.ReturnErrorMessage;
 import com.project.missaojupiter.model.Galileo.Galileo;
 import com.project.missaojupiter.repository.GalileoRepository;
 
@@ -69,6 +70,14 @@ public class ServiceGalileo {
 			return new ResponseEntity<>(HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
+	
+	public void DonLetValueBeDuplicated(Galileo galileo) {
+		Galileo buscaGalie = galileoRepository.findByNome(galileo.getNome());
+		if(buscaGalie != null && buscaGalie.getNome() != galileo.getNome()) {
+			throw new ReturnErrorMessage("a sonda %s já se encontra cadastrado, por favor insira valores validos",galileo.getNome());
 		}
 	}
 }

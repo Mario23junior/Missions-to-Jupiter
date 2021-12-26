@@ -7,5 +7,7 @@ import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Repository
 public interface GalileoRepository extends JpaRepository<Galileo, Long>{
+  
+	Galileo findByNome(String nome);
 
 }
