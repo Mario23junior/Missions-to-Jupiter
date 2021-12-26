@@ -1,6 +1,7 @@
 package com.project.missaojupiter.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,13 @@ public class ControllerGalileo {
 	public ResponseEntity<GalileoDto> update(@PathVariable Long id, @RequestBody GalileoDto galileoDto) {
 		return service.updateIdInfo(id, galileoDto);
 	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<GalileoDto> deleteGalie(@PathVariable Long id){
+		return service.delete(id);
+	}
+
+	
 }
 
 

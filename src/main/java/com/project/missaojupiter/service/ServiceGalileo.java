@@ -58,9 +58,19 @@ public class ServiceGalileo {
 			
 		} else {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
 		}
-	}	
+	}
+	
+	
+	public ResponseEntity<GalileoDto> delete(Long id) {
+		Optional<Galileo> findId = galileoRepository.findById(id);
+		if(findId.isPresent()) {
+			galileoRepository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 }
 
 
