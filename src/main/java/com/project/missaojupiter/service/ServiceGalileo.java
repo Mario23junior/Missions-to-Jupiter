@@ -44,5 +44,32 @@ public class ServiceGalileo {
 		}
 	}
 	
-	
+	public ResponseEntity<GalileoDto> updateIdInfo(Long id,GalileoDto galileoDto) {
+		Optional<Galileo> updateData = galileoRepository.findById(id);
+		
+		if(updateData.isPresent()) {
+			Galileo dataGali = updateData.get();
+			dataGali.setNome(galileoDto.getNome());
+			dataGali.setDescricao(galileoDto.getDescricao());
+			dataGali.setIndentificacao(galileoDto.getIndentificacao());
+			dataGali.setDuracaoDaMiscao(galileoDto.getDuracaoDaMiscao());
+			galileoRepository.save(dataGali);
+			return ResponseEntity.ok(mapper.map(dataGali, GalileoDto.class));
+			
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+		}
+	}	
 }
+
+
+
+
+
+
+
+
+
+
+
