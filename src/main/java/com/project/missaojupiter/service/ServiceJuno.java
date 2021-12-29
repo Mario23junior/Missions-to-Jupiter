@@ -1,5 +1,7 @@
 package com.project.missaojupiter.service;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,15 @@ public class ServiceJuno {
 		if(buscaJuno != null && buscaJuno.getId() != dtoModel.getId()) {
 			throw new ReturnErrorMessage("a sonda %s já se encontra cadastrada, "
 					+ "por favor insira valores validos",dtoModel.getNome());
+		}
+	}
+	
+	public ResponseEntity<JunoDto> listId(Long id) {
+		Optional<Juno> listId = junoRepository.findById(id);
+		if(listId.isPresent()) {
+			return ResponseEntity.ok(mapper.map(listId.get(), JunoDto.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
 	
