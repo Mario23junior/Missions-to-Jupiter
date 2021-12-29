@@ -92,14 +92,3 @@ public class ServiceGalileo {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
