@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.project.missaojupiter.ModelDTO.JunoDto.JunoDto;
+import com.project.missaojupiter.exceptions.ReturnErrorMessage;
 import com.project.missaojupiter.model.Juno.Juno;
 import com.project.missaojupiter.repository.JunoRepository;
 
@@ -21,6 +22,7 @@ public class ServiceJuno {
 	}
 	
 	public ResponseEntity<JunoDto> save(JunoDto junoDto) {
+		DonLetValueBeDuplicated(junoDto);
 		Juno modelSave = bodysave(mapper.map(junoDto, Juno.class));
 		return ResponseEntity
 				   .status(HttpStatus.OK)
@@ -28,7 +30,17 @@ public class ServiceJuno {
 	}
 	
 	public Juno bodysave(Juno juno) {
-		return junoRepository.save(juno); 
+ 		return junoRepository.save(juno); 
+	}
+	
+
+	public void DonLetValueBeDuplicated(JunoDto junoDto) {	
+		Juno dtoModel = mapper.map(junoDto, Juno.class);
+ 		Juno buscaJuno = junoRepository.findByNome(dtoModel.getNome());
+		if(buscaJuno != null && buscaJuno.getId() != dtoModel.getId()) {
+			throw new ReturnErrorMessage("a sonda %s já se encontra cadastrada, "
+					+ "por favor insira valores validos",dtoModel.getNome());
+		}
 	}
 	
 }
