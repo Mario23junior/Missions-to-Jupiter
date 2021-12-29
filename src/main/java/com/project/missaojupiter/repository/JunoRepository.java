@@ -8,4 +8,6 @@ import com.project.missaojupiter.model.Juno.Juno;
 @Repository
 public interface JunoRepository extends JpaRepository<Juno, Long>{
 
+	Juno findByNome(String nome);
+
 }
