@@ -2,10 +2,13 @@ package com.project.missaojupiter.ModelDTO.PinnerDto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class PinnerDto {
 
 	private String nome;
 	private String descricao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataDeConstrucao;
 	private String objetivo;
 	private boolean tripulada;
