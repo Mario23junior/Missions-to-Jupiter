@@ -2,15 +2,18 @@ package com.project.missaojupiter.ModelDTO.voyagerDto;
 
 import java.util.Date;
 
-public class voyagerDto {
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+public class VoyagerDto {
 
 	private String nome;
 	private String destino;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataLancamento;
 	private String tipo;
 	private boolean tripulada;
 
-	public voyagerDto() {
+	public VoyagerDto() {
 	}
 
 	public String getNome() {
