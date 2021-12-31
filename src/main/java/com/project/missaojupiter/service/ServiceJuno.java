@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.project.missaojupiter.ModelDTO.GalileoDto.GalileoDto;
 import com.project.missaojupiter.ModelDTO.JunoDto.JunoDto;
 import com.project.missaojupiter.exceptions.ReturnErrorMessage;
+import com.project.missaojupiter.model.Galileo.Galileo;
 import com.project.missaojupiter.model.Juno.Juno;
 import com.project.missaojupiter.repository.JunoRepository;
 
@@ -67,6 +69,17 @@ public class ServiceJuno {
  		} else {
  			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
  		}
+	}
+		
+
+		public ResponseEntity<JunoDto> delete(Long id) {
+			Optional<Juno> findId = junoRepository.findById(id);
+			if(findId.isPresent()) {
+				junoRepository.delete(findId.get());
+				return new ResponseEntity<>(HttpStatus.OK);
+			} else {
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 	}
 	
 }
