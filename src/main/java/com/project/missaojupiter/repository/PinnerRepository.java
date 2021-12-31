@@ -8,4 +8,6 @@ import com.project.missaojupiter.model.pinner.Pinner;
 @Repository
 public interface PinnerRepository extends JpaRepository<Pinner, Long>{
 
+	Pinner findByNome(String nome);
+
 }
