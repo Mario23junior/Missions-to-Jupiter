@@ -54,4 +54,19 @@ public class ServiceJuno {
 		}
 	}
 	
+	public ResponseEntity<JunoDto> updateData(Long id, JunoDto junoDto) {
+  		Optional<Juno> capturarData = junoRepository.findById(id);
+		if(capturarData.isPresent()) {
+			Juno sondaInfo = capturarData.get();
+			sondaInfo.setNome(junoDto.getNome());
+			sondaInfo.setTipo(junoDto.getTipo());
+			sondaInfo.setDuracao(junoDto.getDuracao());
+			sondaInfo.setDescricao(junoDto.getDescricao());
+			junoRepository.save(sondaInfo);
+			return ResponseEntity.ok(mapper.map(sondaInfo, JunoDto.class));
+ 		} else {
+ 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+ 		}
+	}
+	
 }
