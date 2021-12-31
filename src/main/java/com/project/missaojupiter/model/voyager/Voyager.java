@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
-public class voyager {
+public class Voyager {
    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +18,12 @@ public class voyager {
 	
 	private String nome;
 	private String destino;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataLancamento;
 	private String tipo;
 	private boolean tripulada;
 	
-	public voyager() {
+	public Voyager() {
 		// TODO Auto-generated constructor stub
 	}
 
