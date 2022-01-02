@@ -2,10 +2,15 @@ package com.project.missaojupiter.ModelDTO.GalileoDto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class MissaoDto {
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataDeLacamento;
 	private String destino;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
 

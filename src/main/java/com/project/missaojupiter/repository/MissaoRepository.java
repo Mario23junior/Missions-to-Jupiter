@@ -8,4 +8,5 @@ import com.project.missaojupiter.model.Galileo.Missao;
 @Repository
 public interface MissaoRepository extends JpaRepository<Missao, Long>{
 
+	Missao findByDestino(String nome);
 }
