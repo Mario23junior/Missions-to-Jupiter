@@ -11,15 +11,15 @@ public class Propriedades {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String fabricante;
-	private Double orbitador;
-	private Double aterrissador;
+	private String orbitador;
+	private String aterrissador;
 	private String geradorDeEnergia;
 	private String massaDeCargaUtil;
-	
+
 	public Propriedades() {
- 	}
+	}
 
 	public Long getId() {
 		return id;
@@ -37,19 +37,19 @@ public class Propriedades {
 		this.fabricante = fabricante;
 	}
 
-	public Double getOrbitador() {
+	public String getOrbitador() {
 		return orbitador;
 	}
 
-	public void setOrbitador(Double orbitador) {
+	public void setOrbitador(String orbitador) {
 		this.orbitador = orbitador;
 	}
 
-	public Double getAterrissador() {
+	public String getAterrissador() {
 		return aterrissador;
 	}
 
-	public void setAterrissador(Double aterrissador) {
+	public void setAterrissador(String aterrissador) {
 		this.aterrissador = aterrissador;
 	}
 
@@ -68,6 +68,5 @@ public class Propriedades {
 	public void setMassaDeCargaUtil(String massaDeCargaUtil) {
 		this.massaDeCargaUtil = massaDeCargaUtil;
 	}
-	
-	
+
 }

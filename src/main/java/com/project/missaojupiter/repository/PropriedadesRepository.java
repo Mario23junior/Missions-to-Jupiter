@@ -8,4 +8,6 @@ import com.project.missaojupiter.model.Galileo.Propriedades;
 @Repository
 public interface PropriedadesRepository extends JpaRepository<Propriedades, Long>{
 
+	Propriedades findByFabricante(String fabricante);
+
 }
