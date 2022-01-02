@@ -13,8 +13,8 @@ public class MissaoDto {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
-
 	
+
 	public Date getDataDeLacamento() {
 		return dataDeLacamento;
 	}
@@ -46,5 +46,5 @@ public class MissaoDto {
 	public void setVeiculoDeLancamento(String veiculoDeLancamento) {
 		this.veiculoDeLancamento = veiculoDeLancamento;
 	}
-
+	
 }
