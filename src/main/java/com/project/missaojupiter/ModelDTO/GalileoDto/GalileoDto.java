@@ -14,13 +14,9 @@ public class GalileoDto {
 	private String duracaoDaMiscao;
 
 	private List<MissaoDto> missaoDtos;
-
 	private List<PropriedadesDto> propriedadesDtos;
-
 	private List<JunoDto> junoDto;
-
 	private List<PinnerDto> pinnerDtos;
-
 	private List<VoyagerDto> voyagerDtos;
 
 	public GalileoDto() {
@@ -63,10 +59,6 @@ public class GalileoDto {
 		return missaoDtos;
 	}
 
-	public void setMissaoDtos(List<MissaoDto> missaoDtos) {
-		this.missaoDtos = missaoDtos;
-	}
-
 	public List<PropriedadesDto> getPropriedadesDtos() {
 		return propriedadesDtos;
 	}
@@ -98,4 +90,11 @@ public class GalileoDto {
 	public void setVoyagerDtos(List<VoyagerDto> voyagerDtos) {
 		this.voyagerDtos = voyagerDtos;
 	}
+
+	public void setMissaoDtos(List<MissaoDto> missaoDtos) {
+		this.missaoDtos = missaoDtos;
+	}
+
+	
+	
 }
