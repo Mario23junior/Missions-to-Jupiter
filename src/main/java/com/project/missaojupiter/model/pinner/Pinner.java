@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Entity
 public class Pinner {
@@ -22,6 +24,9 @@ public class Pinner {
 	private Date dataDeConstrucao;
 	private String objetivo;
 	private boolean tripulada;
+	
+	 @ManyToOne
+	 Galileo galileo;
 	
 	public Pinner() {
 		// TODO Auto-generated constructor stub
@@ -73,6 +78,14 @@ public class Pinner {
 
 	public void setTripulada(boolean tripulada) {
 		this.tripulada = tripulada;
+	}
+
+	public Galileo getGalileo() {
+		return galileo;
+	}
+
+	public void setGalileo(Galileo galileo) {
+		this.galileo = galileo;
 	}
 
 	

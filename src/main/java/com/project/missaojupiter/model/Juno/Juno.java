@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Entity
 public class Juno {
@@ -15,6 +18,9 @@ public class Juno {
 	private String descricao;
 	private String tipo;
 	private Double duracao;
+	
+	 @ManyToOne
+	 Galileo galileo;
 	
 	public Juno() {
 		// TODO Auto-generated constructor stub
@@ -59,6 +65,16 @@ public class Juno {
 	public void setDuracao(Double duracao) {
 		this.duracao = duracao;
 	}
+
+	public Galileo getGalileo() {
+		return galileo;
+	}
+
+	public void setGalileo(Galileo galileo) {
+		this.galileo = galileo;
+	}
+	
+	
 	
 	
 	

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Propriedades {
@@ -17,6 +18,9 @@ public class Propriedades {
 	private String aterrissador;
 	private String geradorDeEnergia;
 	private String massaDeCargaUtil;
+	
+	 @ManyToOne
+	 Galileo galileo;
 
 	public Propriedades() {
 	}
@@ -68,5 +72,14 @@ public class Propriedades {
 	public void setMassaDeCargaUtil(String massaDeCargaUtil) {
 		this.massaDeCargaUtil = massaDeCargaUtil;
 	}
+
+	public Galileo getGalileo() {
+		return galileo;
+	}
+
+	public void setGalileo(Galileo galileo) {
+		this.galileo = galileo;
+	}
+	
 
 }

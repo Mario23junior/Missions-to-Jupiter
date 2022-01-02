@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Missao {
@@ -17,6 +18,10 @@ public class Missao {
 	private String destino;
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
+	
+    @ManyToOne
+    Galileo galileo;
+
 	
 	public Long getId() {
 		return id;
@@ -47,6 +52,12 @@ public class Missao {
 	}
 	public void setVeiculoDeLancamento(String veiculoDeLancamento) {
 		this.veiculoDeLancamento = veiculoDeLancamento;
+	}
+	public Galileo getGalileo() {
+		return galileo;
+	}
+	public void setGalileo(Galileo galileo) {
+		this.galileo = galileo;
 	}
 	
 	

@@ -14,6 +14,7 @@ public class MissaoDto {
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
 
+	
 	public Date getDataDeLacamento() {
 		return dataDeLacamento;
 	}
