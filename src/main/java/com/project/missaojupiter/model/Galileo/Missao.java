@@ -17,6 +17,7 @@ public class Missao {
 	private String destino;
 	private Date dataDeAterrissagem;
 	private String veiculoDeLancamento;
+	
 	public Long getId() {
 		return id;
 	}
