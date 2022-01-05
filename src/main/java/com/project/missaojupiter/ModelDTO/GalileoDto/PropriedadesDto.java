@@ -1,16 +1,34 @@
 package com.project.missaojupiter.ModelDTO.GalileoDto;
 
+import javax.persistence.Column;
+
 public class PropriedadesDto {
+
+	private Long id;
 
 	private String fabricante;
 	private String orbitador;
 	private String aterrissador;
- 	private String geradorDeEnergia;
+	
+	@Column(name = "gerador_de_energia")
+	private String geradorDeEnergia;
+	
+	@Column(name = "massa_de_carga_util")
 	private String massaDeCargaUtil;
 
 	public PropriedadesDto() {
 		
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 
 	public String getFabricante() {
 		return fabricante;

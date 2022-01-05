@@ -2,6 +2,7 @@ package com.project.missaojupiter.model.voyager;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,21 +14,23 @@ import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Entity
 public class Voyager {
-   
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String nome;
 	private String destino;
+	
+	@Column(name = "data_lancamento")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataLancamento;
 	private String tipo;
 	private boolean tripulada;
-	
-	 @ManyToOne
-	 Galileo galileo;
-	
+
+	@ManyToOne
+	private Galileo galileo;
+
 	public Voyager() {
 		// TODO Auto-generated constructor stub
 	}
@@ -87,7 +90,5 @@ public class Voyager {
 	public void setGalileo(Galileo galileo) {
 		this.galileo = galileo;
 	}
-	
-	
-	
+
 }

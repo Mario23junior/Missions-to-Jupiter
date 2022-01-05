@@ -31,13 +31,14 @@ public class ServiceToEntityAllResponse {
 				              .collect(Collectors.toList());
 				
   	}
-	
 	public GalileoDto ConvertDtoResponseAllData(Galileo galileo) {
-		mapper.getConfiguration()
-		.setMatchingStrategy(MatchingStrategies.LOOSE);
-		 GalileoDto galileoDto = mapper.map(galileo, GalileoDto.class);
-		 return galileoDto;
+				mapper.getConfiguration()
+		          .setMatchingStrategy(MatchingStrategies.LOOSE);
 		
-	}
+		GalileoDto galieoDto = mapper
+				.map(galileo, GalileoDto.class);
+		
+		return galieoDto;
+}
 	
 } 

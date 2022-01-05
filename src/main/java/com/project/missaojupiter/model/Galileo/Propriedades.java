@@ -1,5 +1,6 @@
 package com.project.missaojupiter.model.Galileo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,18 +11,24 @@ import javax.persistence.ManyToOne;
 public class Propriedades {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String fabricante;
 	private String orbitador;
 	private String aterrissador;
+	
+	@Column(name = "gerador_de_energia")
 	private String geradorDeEnergia;
+	
+	@Column(name = "massa_de_carga_util")
 	private String massaDeCargaUtil;
 	
 	 @ManyToOne
-	 Galileo galileo;
+	 private Galileo galileo;
 
+	 
+	 
 	public Propriedades() {
 	}
 

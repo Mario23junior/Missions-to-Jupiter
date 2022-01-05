@@ -24,12 +24,10 @@ public class ServiceGalileo {
 		this.galileoRepository = galileoRepository;
  	}
 	
-	public ResponseEntity<GalileoDto> save(GalileoDto galielDto) {
-		Galileo savebody = saveRes(mapper.map(galielDto, Galileo.class));
- 		return ResponseEntity
-				.status(HttpStatus.CREATED)
-				.body(mapper.map(savebody, GalileoDto.class));
-	}
+	public Galileo save(Galileo galileo) {
+		Galileo salvardados = galileoRepository.save(galileo);
+		return salvardados;
+ 	}
 	
 	public Galileo saveRes(Galileo galileo) {
 	DonLetValueBeDuplicated(galileo);

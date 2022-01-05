@@ -2,6 +2,7 @@ package com.project.missaojupiter.model.Galileo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,16 +13,30 @@ import javax.persistence.ManyToOne;
 public class Missao {
    
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(name = "data_de_lancamento")
 	private Date dataDeLacamento;
+	
 	private String destino;
+	
+	@Column(name = "data_de_aterrissagem")
 	private Date dataDeAterrissagem;
+	
+	@Column(name = "vaiculo_de_lancamento")
 	private String veiculoDeLancamento;
 	
     @ManyToOne
-    Galileo galileo;
-
+    private Galileo galileo;
+	
+    
+	public Galileo getGalileo() {
+		return galileo;
+	}
+	public void setGalileo(Galileo galileo) {
+		this.galileo = galileo;
+	}
 	
 	public Long getId() {
 		return id;
@@ -52,13 +67,6 @@ public class Missao {
 	}
 	public void setVeiculoDeLancamento(String veiculoDeLancamento) {
 		this.veiculoDeLancamento = veiculoDeLancamento;
-	}
-	public Galileo getGalileo() {
-		return galileo;
-	}
-	public void setGalileo(Galileo galileo) {
-		this.galileo = galileo;
-	}
-	
+	}	
 	
 }

@@ -3,44 +3,45 @@ package com.project.missaojupiter.model.Galileo;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 import com.project.missaojupiter.model.Juno.Juno;
 import com.project.missaojupiter.model.pinner.Pinner;
 import com.project.missaojupiter.model.voyager.Voyager;
 
 @Entity
-@Table(name = "Galileo")
 public class Galileo {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String nome;
 	private String descricao;
 	private String indentificacao;
-	private String duracaoDaMiscao;
 	
-  	@OneToMany(mappedBy = "galileo",cascade = CascadeType.ALL)
+	@Column(name = "duracao_da_miscao")
+	private String duracaoDaMiscao;
+
+	@OneToMany(mappedBy = "galileo", cascade = CascadeType.ALL)
 	private List<Missao> missaos;
-  	
-  	@OneToMany(mappedBy = "galileo",cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "galileo", cascade = CascadeType.ALL)
 	private List<Propriedades> propriedades;
-  	
-  	@OneToMany(mappedBy = "galileo",cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "galileo", cascade = CascadeType.ALL)
 	private List<Juno> juno;
-  	
-  	@OneToMany(mappedBy = "galileo",cascade = CascadeType.ALL)
-   	private List<Pinner> pinner;
-  	
-  	@OneToMany(mappedBy = "galileo",cascade = CascadeType.ALL)
-	private List<Voyager> voyagers;
+
+	@OneToMany(mappedBy = "galileo", cascade = CascadeType.ALL)
+	private List<Pinner> pinner;
+
+	@OneToMany(mappedBy = "galileo", cascade = CascadeType.ALL)
+	private List<Voyager> voyager;
 
 	public Galileo() {
 	}
@@ -117,12 +118,14 @@ public class Galileo {
 		this.pinner = pinner;
 	}
 
-	public List<Voyager> getVoyagers() {
-		return voyagers;
+	public List<Voyager> getVoyager() {
+		return voyager;
 	}
 
-	public void setVoyagers(List<Voyager> voyagers) {
-		this.voyagers = voyagers;
+	public void setVoyager(List<Voyager> voyager) {
+		this.voyager = voyager;
 	}
+
+	
 
 }
