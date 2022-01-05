@@ -2,10 +2,21 @@ package com.project.missaojupiter.ModelDTO.JunoDto;
 
 public class JunoDto {
 
+	private Long id;
+
 	private String nome;
 	private String descricao;
 	private String tipo;
 	private Double duracao;
+
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public JunoDto() {
 		// TODO Auto-generated constructor stub

@@ -10,18 +10,18 @@ import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Entity
 public class Juno {
-  
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
 	private String descricao;
 	private String tipo;
 	private Double duracao;
-	
-	 @ManyToOne
-	 Galileo galileo;
-	
+
+	@ManyToOne
+	private Galileo galileo;
+
 	public Juno() {
 		// TODO Auto-generated constructor stub
 	}
@@ -73,9 +73,5 @@ public class Juno {
 	public void setGalileo(Galileo galileo) {
 		this.galileo = galileo;
 	}
-	
-	
-	
-	
-	
+
 }

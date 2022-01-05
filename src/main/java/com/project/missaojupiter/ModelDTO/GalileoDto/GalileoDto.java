@@ -8,12 +8,13 @@ import com.project.missaojupiter.ModelDTO.voyagerDto.VoyagerDto;
 
 public class GalileoDto {
 
+	private Long id;
 	private String nome;
 	private String descricao;
 	private String indentificacao;
 	private String duracaoDaMiscao;
 
-	private List<MissaoDto> missaoDtos;
+	private List<MissaoDto> missaosDto;
 	private List<PropriedadesDto> propriedadesDtos;
 	private List<JunoDto> junoDto;
 	private List<PinnerDto> pinnerDtos;
@@ -21,6 +22,14 @@ public class GalileoDto {
 
 	public GalileoDto() {
 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -55,8 +64,12 @@ public class GalileoDto {
 		this.duracaoDaMiscao = duracaoDaMiscao;
 	}
 
-	public List<MissaoDto> getMissaoDtos() {
-		return missaoDtos;
+	public List<MissaoDto> getMissaosDto() {
+		return missaosDto;
+	}
+
+	public void setMissaosDto(List<MissaoDto> missaosDto) {
+		this.missaosDto = missaosDto;
 	}
 
 	public List<PropriedadesDto> getPropriedadesDtos() {
@@ -91,10 +104,6 @@ public class GalileoDto {
 		this.voyagerDtos = voyagerDtos;
 	}
 
-	public void setMissaoDtos(List<MissaoDto> missaoDtos) {
-		this.missaoDtos = missaoDtos;
-	}
+	
 
-	
-	
 }

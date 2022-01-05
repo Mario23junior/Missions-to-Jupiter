@@ -2,18 +2,33 @@ package com.project.missaojupiter.ModelDTO.voyagerDto;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.project.missaojupiter.ModelDTO.GalileoDto.GalileoDto;
 
 public class VoyagerDto {
 
+	private Long id;
+
 	private String nome;
 	private String destino;
+	
+	@Column(name = "data_lancamento")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataLancamento;
+	
 	private String tipo;
 	private boolean tripulada;
+	
+	private GalileoDto galileoDto;
 
-	public VoyagerDto() {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -55,4 +70,14 @@ public class VoyagerDto {
 	public void setTripulada(boolean tripulada) {
 		this.tripulada = tripulada;
 	}
+
+	public GalileoDto getGalileoDto() {
+		return galileoDto;
+	}
+
+	public void setGalileoDto(GalileoDto galileoDto) {
+		this.galileoDto = galileoDto;
+	}
+	
+	
 }

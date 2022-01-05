@@ -1,13 +1,20 @@
 package com.project.missaojupiter.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.project.missaojupiter.ModelDTO.GalileoDto.GalileoDto;
 import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Repository
-public interface GalileoRepository extends JpaRepository<Galileo, Long>{
-  
+public interface GalileoRepository extends JpaRepository<Galileo, Long> {
+
 	Galileo findByNome(String nome);
+
+	@Query(value = "SELECT u FROM Galileo u")
+	List<GalileoDto> findAllDataGalileo(GalileoDto galileoDto);
 
 }

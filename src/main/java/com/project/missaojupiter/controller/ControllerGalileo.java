@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.missaojupiter.ModelDTO.GalileoDto.GalileoDto;
+import com.project.missaojupiter.model.Galileo.Galileo;
 import com.project.missaojupiter.service.ServiceGalileo;
 
 @RestController
@@ -24,8 +25,8 @@ public class ControllerGalileo {
 	}
 	
 	@PostMapping
-	public ResponseEntity<GalileoDto> saveGalileo(@RequestBody GalileoDto galileoDto) {
-		return service.save(galileoDto);
+	public Galileo saveGalileo(@RequestBody Galileo galileo) {
+		return service.save(galileo);
 	}
 	
 	@GetMapping("/{id}")

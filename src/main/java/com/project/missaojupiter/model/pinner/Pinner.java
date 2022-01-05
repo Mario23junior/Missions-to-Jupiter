@@ -2,6 +2,7 @@ package com.project.missaojupiter.model.pinner;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,21 +14,23 @@ import com.project.missaojupiter.model.Galileo.Galileo;
 
 @Entity
 public class Pinner {
-  
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String nome;
 	private String descricao;
+	
+	@Column(name = "data_de_construcao")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataDeConstrucao;
 	private String objetivo;
 	private boolean tripulada;
-	
-	 @ManyToOne
-	 Galileo galileo;
-	
+
+	@ManyToOne
+	private Galileo galileo;
+
 	public Pinner() {
 		// TODO Auto-generated constructor stub
 	}
@@ -88,6 +91,4 @@ public class Pinner {
 		this.galileo = galileo;
 	}
 
-	
-	
 }
