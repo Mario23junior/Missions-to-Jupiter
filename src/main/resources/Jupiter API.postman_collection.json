@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "be450e4b-2bba-4fc2-a67c-d14d5b1b62ae",
+		"name": "Jupiter API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Galileo",
+			"item": [
+				{
+					"name": "Salvando informaçãoes do programa galileo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nome\": \"Galileo\",\n    \"descricao\": \"Galileo foi uma nave espacial norte-americana não tripulada, lançada pela NASA para estudar o planeta Júpiter, suas luas e outros corpos celestes do Sistema Solar. Batizada em homenagem ao astrônomo italiano Galileo Galilei\",\n    \"indentificacao\": \"1989-084B\",\n    \"duracaoDaMiscao\": \"13 anos, 11 meses e 3 dias\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/galileo/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"galileo",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações por id sobre a sonda galileo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/galileo/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"galileo",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações da sonda galileo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"nome\": \"Galileo sonda\",\n    \"indentificacao\":\"1989-084B\",\n    \"duracaoDaMiscao\":\"13 anos, 11 meses e 3 dias\",\n    \"descricao\":\"Galileo foi uma nave espacial norte-americana não tripulada, lançada pela NASA para estudar o planeta Júpiter, suas luas e outros corpos celestes do Sistema Solar. Batizada em homenagem ao astrônomo italiano Galileo Galilei\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/galileo/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"galileo",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações da sonda",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/galileo/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"galileo",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Juno",
+			"item": [
+				{
+					"name": "Salvando informações do programa juno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Juno\",\n    \"tipo\": \"sonda\",\n    \"duracao\":6,\n    \"descricao\": \"Juno é uma sonda espacial da NASA atualmente orbitando o planeta Júpiter. \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/juno/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"juno",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando informações da sonda Juno por codigo de idenficação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/juno/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"juno",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações da sonda juno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"nome\": \"Juno\",\n    \"tipo\": \"sonda/labority\",\n    \"duracao\":6,\n    \"descricao\": \"Juno é uma sonda espacial da NASA atualmente orbitando o planeta Júpiter. \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/juno/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"juno",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações por codigo de identificação",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/juno/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"juno",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Piner",
+			"item": [
+				{
+					"name": "Salvando informações da sonda piner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"pioneer\",\n    \"dataDeConstrucao\": \"22/03/1971\",\n    \"objetivo\": \"pesquisa da orbitador lunar\",\n    \"tripulada\":false,\n    \"descricao\": \"O Programa Pioneer foi um programa espacial desenvolvido pelos Estados Unidos para permitir o envio de missões não tripuladas ao espaço, projetadas para a exploração planetária.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/piner/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"piner",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações da sonda pinner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/piner/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"piner",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando inforações sobre o programa espacial pionner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nome\": \"Pioneer\",\n    \"descricao\": \"O Programa Pioneer foi um programa espacial desenvolvido pelos Estados Unidos para permitir o envio de missões não tripuladas ao espaço, projetadas para a exploração planetária.\",\n    \"dataDeConstrucao\": \"22/03/1971\",\n    \"objetivo\": \"pesquisa da orbitador lunar\",\n    \"tripulada\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/piner/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"piner",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando inforações por codigo de identificação",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/piner/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"piner",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voyager",
+			"item": [
+				{
+					"name": "Salvando informações da sonda voyager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Voyager\",\n    \"destino\": \"Júpiter ,Saturno, respectivas luas, Urano, Netuno\",\n    \"dataLancamento\": \"13/02/1977\",\n    \"tipo\": \"Programa espacial\",\n    \"tripulada\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/voyager/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"voyager",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações por codigo de identificação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/voyager/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"voyager",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações do programa voyager",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"nome\": \"Voyager\",\n    \"destino\": \"Júpiter ,Saturno, respectivas luas, Urano, Netuno\",\n    \"dataLancamento\": \"13/02/1977\",\n    \"tipo\": \"Programa espacial/Sonda\",\n    \"tripulada\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/voyager/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"voyager",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/voyager/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"voyager",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Missao",
+			"item": [
+				{
+					"name": "Salvando informações no banco de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataDeLacamento\": \"18/10/1989\",\n    \"destino\": \"Júpiter\",\n    \"dataDeAterrissagem\": \"7/12/1995\",\n    \"veiculoDeLancamento\": \"ônibus espacial Atlantis\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/missao/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"missao",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIstando informações por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/missao/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"missao",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/missao/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"missao",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"dataDeLacamento\": \"18/10/1989\",\n    \"destino\": \"Júpiter\",\n    \"dataDeAterrissagem\": \"07/12/1995\",\n    \"veiculoDeLancamento\": \"ônibus espacial Atlantis\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/missao/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"missao",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Propriedades",
+			"item": [
+				{
+					"name": "Salvando informações por if",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fabricante\": \"Jet Propulsion Laboratory  Messerschmitt-Bölkow-Blohm , General Electric , Hughes Aircraft Company\",\n    \"geradorDeEnergia\": \"Orbitador: GTR , Aterrissador: Bateria\",\n    \"massaDeCargaUtil\": \"Orbitador: 118 kg , Aterrissador: 30 kg\",\n    \"aterrissador\": \"06°05′N 04°04′W\",\n    \"orbitador\": \" nave espacial orbital reutilizável do programa do ônibus espacial da NASA, a agência espacial dos Estados Unidos.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/propriedades/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"propriedades",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/propriedades/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"propriedades",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"fabricante\": \"Jet Propulsion Laboratory  Messerschmitt-Bölkow-Blohm , General Electric , Hughes Aircraft Company\",\n    \"geradorDeEnergia\": \"Orbitador: GTR , Aterrissador: Bateria\",\n    \"massaDeCargaUtil\": \"Orbitador: 118 kg , Aterrissador: 30 kg\",\n    \"aterrissador\": \"06°05′N 04°04′W\",\n    \"orbitador\": \" nave espacial orbital reutilizável do programa do ônibus espacial da NASA, a agência espacial dos Estados Unidos.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/propriedades/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"propriedades",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/propriedades/api/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"propriedades",
+								"api",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listando todas as informações finais",
+			"item": [
+				{
+					"name": "Listar todas as informações finais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/mission/jupiter/api/v1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"mission",
+								"jupiter",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
