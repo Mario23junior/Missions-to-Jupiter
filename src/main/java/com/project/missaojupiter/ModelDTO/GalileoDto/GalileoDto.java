@@ -104,6 +104,14 @@ public class GalileoDto {
 		this.voyagerDtos = voyagerDtos;
 	}
 
+	@Override
+	public String toString() {
+		return "GalileoDto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", indentificacao="
+				+ indentificacao + ", duracaoDaMiscao=" + duracaoDaMiscao + ", missaosDto=" + missaosDto
+				+ ", propriedadesDtos=" + propriedadesDtos + ", junoDto=" + junoDto + ", pinnerDtos=" + pinnerDtos
+				+ ", voyagerDtos=" + voyagerDtos + "]";
+	}
+
 	
 
 }

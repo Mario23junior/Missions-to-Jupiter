@@ -70,5 +70,13 @@ public class PropriedadesDto {
 		this.massaDeCargaUtil = massaDeCargaUtil;
 	}
 
+	@Override
+	public String toString() {
+		return "PropriedadesDto [id=" + id + ", fabricante=" + fabricante + ", orbitador=" + orbitador
+				+ ", aterrissador=" + aterrissador + ", geradorDeEnergia=" + geradorDeEnergia + ", massaDeCargaUtil="
+				+ massaDeCargaUtil + "]";
+	}
+
+	
 	
 }

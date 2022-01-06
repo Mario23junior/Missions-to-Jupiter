@@ -53,4 +53,12 @@ public class JunoDto {
 	public void setDuracao(Double duracao) {
 		this.duracao = duracao;
 	}
+
+	@Override
+	public String toString() {
+		return "JunoDto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", tipo=" + tipo + ", duracao="
+				+ duracao + "]";
+	}
+	
+	
 }

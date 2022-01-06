@@ -72,4 +72,12 @@ public class PinnerDto {
 		this.tripulada = tripulada;
 	}
 
+	@Override
+	public String toString() {
+		return "PinnerDto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", dataDeConstrucao="
+				+ dataDeConstrucao + ", objetivo=" + objetivo + ", tripulada=" + tripulada + "]";
+	}
+	
+	
+
 }

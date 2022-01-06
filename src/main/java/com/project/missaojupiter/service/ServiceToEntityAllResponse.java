@@ -1,5 +1,7 @@
 package com.project.missaojupiter.service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,10 +37,20 @@ public class ServiceToEntityAllResponse {
 				mapper.getConfiguration()
 		          .setMatchingStrategy(MatchingStrategies.LOOSE);
 		
-		GalileoDto galieoDto = mapper
-				.map(galileo, GalileoDto.class);
-		
-		return galieoDto;
-}
+		GalileoDto galieoDto = mapper.map(galileo, GalileoDto.class);
+		saveFileDataResponse(galieoDto.toString());
+	    return galieoDto;
+      }
 	
+	public void saveFileDataResponse(String file) {
+ 		try {
+ 		 FileWriter er = new FileWriter("fileResponse/response.txt");
+		 er.write(file);
+		 er.close();
+			
+		}catch (IOException e) {
+			e.printStackTrace();
+ 		}
+	}	
 } 
+ 
