@@ -78,6 +78,13 @@ public class VoyagerDto {
 	public void setGalileoDto(GalileoDto galileoDto) {
 		this.galileoDto = galileoDto;
 	}
+
+	@Override
+	public String toString() {
+		return "VoyagerDto [id=" + id + ", nome=" + nome + ", destino=" + destino + ", dataLancamento=" + dataLancamento
+				+ ", tipo=" + tipo + ", tripulada=" + tripulada + ", galileoDto=" + galileoDto + "]";
+	}
+	
 	
 	
 }

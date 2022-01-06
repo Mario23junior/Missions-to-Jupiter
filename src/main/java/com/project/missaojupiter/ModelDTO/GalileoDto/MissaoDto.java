@@ -76,6 +76,13 @@ public class MissaoDto {
 	public void setGalileoDto(GalileoDto galileoDto) {
 		this.galileoDto = galileoDto;
 	}
+
+	@Override
+	public String toString() {
+		return "MissaoDto [id=" + id + ", dataDeLacamento=" + dataDeLacamento + ", destino=" + destino
+				+ ", dataDeAterrissagem=" + dataDeAterrissagem + ", veiculoDeLancamento=" + veiculoDeLancamento
+				+ ", galileoDto=" + galileoDto + "]";
+	}
 	
 	
 	
