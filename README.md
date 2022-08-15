@@ -1,6 +1,6 @@
 <p align="center"><img src="img/logo-jupiter.gif" width = "833px" height="433px"></p>
 
-<h1 align="center">API Missações realizadas no planeta jupiter</h1>
+<h1 align="center">API Missões realizadas no planeta jupiter</h1>
 
 <h3 align="center">
 API REST de código aberto para dados de consulta de  pesquisa  as informações nela contida  foi desenvolvida usando como base nos dados da <a href="https://www.nasa.gov/subject/6893/nebulae/" target="_blank">NASA</a>
